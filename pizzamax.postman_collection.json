@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "12e45e82-d4d9-45c1-95ca-a7982702b443",
+		"name": "pizzamax",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24971112"
+	},
+	"item": [
+		{
+			"name": "post-login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "headers: {\"Rest-Id\":55083,\"App-name\":\"pizzamax\"}\r\nnumber: 923032559860\r\notp: 755928\r\ncallbackUrl: https://pizzamax.com.pk/\r\nredirect: false\r\ncsrfToken: 67ea38e0a6465bfa994bd7b1b63d0b4c2f75b3ebbba6b1dca379755e1f1570a2\r\njson: true",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://pizzamax.com.pk/api/auth/callback/credentials?",
+					"protocol": "https",
+					"host": [
+						"pizzamax",
+						"com",
+						"pk"
+					],
+					"path": [
+						"api",
+						"auth",
+						"callback",
+						"credentials"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-access",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pizzamax.com.pk/_next/data/7Eyh3H5jlBhvOSxMjPjVA/en/user/profile.json",
+					"protocol": "https",
+					"host": [
+						"pizzamax",
+						"com",
+						"pk"
+					],
+					"path": [
+						"_next",
+						"data",
+						"7Eyh3H5jlBhvOSxMjPjVA",
+						"en",
+						"user",
+						"profile.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAAGQn13Oon8BAEGssvZBgaTgUfZBO5MhkZCWUufHZAFZBLnZBgSXOuRP8i4z5TeFZCjXMIZBUQYTZAItTzCtPb0uZBTXamcZCGbI3nZAJCKPGRo0nnaFAZAzOBnHmB6RUaV6LRbWl5KPMjkNNvVIRnujI2kdDgkBdedTRlxOxZAZAjLBNCP90e0INBP4DWi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "data: {id: 2691090, wallet_balance: \"0.000\", blacklist: 0, blacklist_by: null, phone: \"+923032559860\",…}\r\nmsg: \"success\"",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://pizzamax.com.pk/user/profile",
+					"protocol": "https",
+					"host": [
+						"pizzamax",
+						"com",
+						"pk"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
